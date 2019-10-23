@@ -4,7 +4,8 @@ import TodoItem from "./TodoItem";
 export default class Todos extends Component {
 
   changeStatus = (todoItem) => {
-    console.log("todoItem == ", todoItem)
+    this.props.patchStatus(todoItem);
+    console.log("todoItem == ", todoItem);
   };
   render() {
     const {todos} = this.props;

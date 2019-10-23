@@ -10,11 +10,13 @@ export default {
       headers: new Headers({'Content-Type': 'application/json'}),
       body: JSON.stringify(todo)
     }),
-  patchStatus: (id, status) => fetch(
-    "http://localhost:9090/api/todos/"+id, {
+  patchStatus: (todo) => fetch(
+    "http://localhost:9090/api/todos/"+todo.id, {
       mode: 'cors',
       method: 'PATCH',
       headers: new Headers({'Content-Type': 'application/json'}),
-      body: JSON.stringify(status)
+      body: JSON.stringify({
+        "status": todo.status
+      })
     })
 }

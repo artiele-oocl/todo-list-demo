@@ -29,6 +29,12 @@ const mapDispatchToProps =  dispatch => ({
   refreshTodos: todos => dispatch({
     type: 'REFRESH_TODOS',
     payload: todos
+  }),
+  patchStatus: (todo) => dispatch({
+    // type: 'PATCH_STATUS',
+    // payload: todo
+
+  
   })
 });
 

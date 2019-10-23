@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './TodoItem.css';
 import 'antd/dist/antd.css';
-import { Checkbox } from 'antd';
+import { Checkbox, Table } from 'antd';
 
 export default class TodoItem extends Component {
   constructor(props) {
@@ -23,17 +23,13 @@ export default class TodoItem extends Component {
     const isCompleted = this.state.status === 'completed' ;
     return (
       <div className="todo-item" onClick={this.changeValue}>
-        <div>
-          {/* <label className="checkbox-label">
-            <input type="checkbox" checked={isCompleted} onChange={this.changeValue} />
-            <span className="checkbox-custom rectangular"/>
-          </label> */}
-          <Checkbox className="todo-checkbox" checked={isCompleted} onChange={this.changeValue}/>
-        </div>
-        <div className="content">
-          <label className={this.state.status === 'completed' ? 'cross-line' : ''}>{todo.content}</label>
-        </div>
+      <div>
+        <Checkbox className="todo-checkbox" checked={isCompleted} onChange={this.changeValue}/>
       </div>
+      <div className="content">
+        <label className={this.state.status === 'completed' ? 'cross-line' : ''}>{todo.content}</label>
+      </div>
+    </div>
     )
   }
 }

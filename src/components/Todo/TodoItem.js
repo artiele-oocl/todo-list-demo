@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './TodoItem.css';
 import 'antd/dist/antd.css';
-import { Checkbox, Table } from 'antd';
+import { Checkbox } from 'antd';
 
 export default class TodoItem extends Component {
   constructor(props) {
